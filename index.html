@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>منيو شام — للمأكولات الشامية والسورية | زيزينيا، الإسكندرية</title>
+<meta name="description" content="منيو مطعم شام: شاورما بالوزن، ركن البطاطس، كريسبي، فتة، كريب وعروض يومية. اطلب على واتساب — توصيل من سموحة لحد العوايد.">
+<meta name="theme-color" content="#14100C">
+<meta property="og:title" content="منيو شام — الخلطة سورية … بلمسة مصرية">
+<meta property="og:description" content="عروض يومية وتوصيل سريع من سموحة لحد العوايد">
+<meta property="og:image" content="assets/hero.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700;800;900&family=Tajawal:wght@400;500;700&family=Aref+Ruqaa:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#14100C; --surf:#1D1712; --surf2:#241C16; --surf3:#2C2219;
+  --line:rgba(245,239,228,.10); --line2:rgba(245,239,228,.06);
+  --text:#F5EFE4; --dim:#BCB09D; --faint:#8E8271;
+  --gold:#F5B913; --gold-d:#26201A;
+  --r:16px; --rl:22px;
+  --nav-h:104px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{font-family:'Tajawal',Tahoma,system-ui,sans-serif;background:var(--bg);color:var(--text);
+     -webkit-font-smoothing:antialiased;padding-bottom:92px}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:8px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:absolute;top:-60px;inset-inline-start:12px;background:var(--gold);color:var(--gold-d);
+      padding:10px 18px;border-radius:0 0 12px 12px;font-weight:800;z-index:200}
+.skip:focus{top:0}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:400px;display:grid;place-items:end center;overflow:hidden}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 55%}
+.hero .veil{position:absolute;inset:0;
+  background:linear-gradient(to top,var(--bg) 3%,rgba(20,16,12,.88) 32%,rgba(20,16,12,.42) 68%,rgba(20,16,12,.62) 100%)}
+.hero-in{position:relative;z-index:2;text-align:center;padding:64px 20px 40px;max-width:640px;
+         display:grid;gap:12px;justify-items:center}
+.brand{font-family:'Aref Ruqaa',serif;font-size:clamp(44px,11vw,62px);line-height:1.05;
+       text-shadow:0 4px 30px rgba(0,0,0,.6)}
+.tagline{font-size:clamp(15px,4vw,18px);color:var(--dim);font-weight:500}
+.meta{font-size:13px;color:var(--faint);line-height:1.9}
+.cta{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:6px}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:var(--gold-d);
+     font-family:'Cairo',sans-serif;font-weight:800;font-size:15px;padding:13px 28px;border-radius:999px;
+     transition:filter .15s,transform .12s;border:2px solid var(--gold)}
+.btn:hover{filter:brightness(1.08)}
+.btn:active{transform:translateY(1px)}
+.btn.ghost{background:transparent;color:var(--text);border-color:rgba(245,185,19,.55)}
+
+/* ---------- nav ---------- */
+.navbar{position:sticky;top:0;z-index:60;background:rgba(20,16,12,.94);
+        backdrop-filter:blur(12px);border-bottom:1px solid var(--line2)}
+.navwrap{max-width:900px;margin:0 auto;padding:9px 14px;display:grid;gap:9px}
+.search{position:relative}
+.search input{width:100%;background:var(--surf);border:1px solid var(--line);border-radius:999px;
+  color:var(--text);font-family:'Tajawal',sans-serif;font-size:14.5px;padding:11px 42px 11px 16px}
+.search input::placeholder{color:var(--faint)}
+.search input:focus{border-color:rgba(245,185,19,.6);outline:none}
+.search .ico{position:absolute;inset-inline-end:15px;top:50%;transform:translateY(-50%);
+  color:var(--faint);font-size:15px;pointer-events:none}
+.search .clr{position:absolute;inset-inline-start:8px;top:50%;transform:translateY(-50%);
+  background:none;border:0;color:var(--faint);font-size:20px;cursor:pointer;padding:4px 8px;line-height:1}
+.chipsnav{display:flex;gap:7px;overflow-x:auto;scrollbar-width:none;padding-bottom:1px}
+.chipsnav::-webkit-scrollbar{display:none}
+.chipsnav a{flex:0 0 auto;font-size:13px;font-weight:700;color:var(--dim);
+  border:1px solid var(--line);padding:7px 15px;border-radius:999px;transition:.15s}
+.chipsnav a:hover{color:var(--gold);border-color:rgba(245,185,19,.5)}
+.chipsnav a[aria-current="true"]{background:var(--gold);color:var(--gold-d);border-color:var(--gold)}
+
+main{max-width:900px;margin:0 auto;padding:26px 16px 20px;display:grid;gap:46px}
+
+/* ---------- zones ---------- */
+.zones{background:var(--surf);border:1px solid var(--line2);border-radius:var(--r);
+       padding:15px 18px;text-align:center;font-size:13.5px;color:var(--dim);line-height:1.9}
+.zones b{color:var(--gold);display:block;margin-bottom:3px;font-size:14px}
+
+/* ---------- offers ---------- */
+.sec-title{font-family:'Aref Ruqaa',serif;font-size:30px;text-align:center;margin-bottom:6px}
+.sec-rule{width:54px;height:2px;background:var(--gold);border-radius:2px;margin:0 auto 20px}
+.offers{display:grid;grid-auto-flow:column;grid-auto-columns:255px;gap:13px;overflow-x:auto;
+        scroll-snap-type:x mandatory;padding-bottom:12px;scrollbar-width:none}
+.offers::-webkit-scrollbar{display:none}
+@media(min-width:820px){.offers{grid-auto-flow:row;grid-template-columns:repeat(3,1fr);
+  grid-auto-columns:unset;overflow:visible}}
+.offer{scroll-snap-align:start;background:var(--surf);border:1px solid var(--line2);
+       border-radius:var(--rl);overflow:hidden;display:flex;flex-direction:column}
+.offer.feat{border-color:rgba(245,185,19,.42)}
+.oim{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--surf2)}
+.oim img{width:100%;height:100%;object-fit:cover;transition:transform .35s}
+.offer:hover .oim img{transform:scale(1.05)}
+.ob{position:absolute;top:10px;inset-inline-start:10px;background:var(--gold);color:var(--gold-d);
+    font-family:'Cairo',sans-serif;font-weight:800;font-size:11px;padding:4px 12px;border-radius:999px}
+.oin{padding:14px 15px 15px;display:flex;flex-direction:column;gap:7px;flex:1}
+.oin h3{font-family:'Cairo',sans-serif;font-weight:800;font-size:16.5px}
+.oin p{font-size:12.8px;line-height:1.65;color:var(--dim);flex:1}
+.opr{display:flex;align-items:center;gap:8px;margin-top:3px}
+.opr b{font-family:'Cairo',sans-serif;font-weight:900;font-size:25px;color:var(--gold);line-height:1}
+.opr span{font-size:11.5px;color:var(--faint)}
+.oa{margin-inline-start:auto;background:rgba(245,185,19,.13);border:1px solid rgba(245,185,19,.4);
+    color:var(--gold);font-family:'Cairo',sans-serif;font-weight:800;font-size:12.5px;
+    padding:7px 15px;border-radius:999px;transition:.15s}
+.oa:hover{background:var(--gold);color:var(--gold-d)}
+
+/* ---------- sections ---------- */
+.sec{scroll-margin-top:calc(var(--nav-h) + 46px)}
+.sh{display:flex;align-items:center;gap:13px;padding-bottom:13px;margin-bottom:4px;
+    border-bottom:1.5px solid rgba(245,185,19,.28)}
+.thumb{width:56px;height:56px;border-radius:15px;object-fit:cover;flex:0 0 auto;
+       border:1.5px solid var(--line)}
+.thumb.ph{background:var(--surf2)}
+.sh-t{min-width:0}
+.sh h2{font-family:'Aref Ruqaa',serif;font-size:25px;line-height:1.35;display:flex;
+       align-items:center;gap:9px;flex-wrap:wrap}
+.tag{font-family:'Cairo',sans-serif;background:var(--gold);color:var(--gold-d);font-size:11px;
+     font-weight:800;padding:3px 11px;border-radius:999px}
+.note{font-size:12.5px;color:var(--faint);margin-top:3px;line-height:1.6}
+
+.rows{list-style:none;display:grid;gap:2px}
+.row{display:flex;align-items:center;gap:12px;padding:12px 4px;
+     border-bottom:1px solid var(--line2)}
+.row:last-child{border-bottom:0}
+.rt{flex:1;min-width:0}
+.nm{display:block;font-weight:700;font-size:15.5px;line-height:1.45}
+.ds{display:block;font-size:12px;color:var(--faint);margin-top:2px;line-height:1.55}
+.chips{display:flex;gap:6px;flex:0 0 auto}
+.chip{background:var(--surf2);border:1px solid var(--line);border-radius:11px;
+      padding:5px 9px;min-width:58px;text-align:center;display:grid;gap:1px}
+.chip i{font-style:normal;font-size:10px;font-weight:700;color:var(--faint);line-height:1.4}
+.chip b{font-family:'Cairo',sans-serif;font-weight:800;font-size:15.5px;color:var(--gold);line-height:1.3}
+.chip.one{min-width:62px;padding:9px 10px}
+.chip.one b{font-size:17px}
+.chip.off{opacity:.4}
+.chip.off b{color:var(--faint)}
+.empty{text-align:center;color:var(--faint);font-size:13px;padding:16px 0}
+
+/* ---------- order block ---------- */
+.order{background:var(--surf2);border:1px solid var(--line2);border-radius:var(--rl);
+       padding:30px 22px;text-align:center;display:grid;gap:14px;justify-items:center}
+.order h2{font-family:'Aref Ruqaa',serif;font-size:28px}
+.order p{font-size:13.5px;color:var(--dim);line-height:1.85;max-width:520px}
+
+footer{max-width:900px;margin:0 auto;padding:4px 18px 30px;font-size:12px;color:var(--faint);
+       display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;line-height:1.9}
+
+/* ---------- floating ---------- */
+.fab{position:fixed;bottom:16px;inset-inline-start:16px;z-index:80;display:inline-flex;
+     align-items:center;gap:8px;background:#25D366;color:#062d13;font-family:'Cairo',sans-serif;
+     font-weight:800;font-size:14.5px;padding:13px 22px;border-radius:999px;
+     box-shadow:0 8px 26px rgba(0,0,0,.5);transition:transform .15s}
+.fab:hover{transform:translateY(-2px)}
+.top{position:fixed;bottom:16px;inset-inline-end:16px;z-index:80;width:46px;height:46px;
+     border-radius:50%;background:var(--surf3);border:1px solid var(--line);color:var(--text);
+     font-size:19px;cursor:pointer;display:grid;place-items:center;opacity:0;pointer-events:none;
+     transition:opacity .2s}
+.top.on{opacity:1;pointer-events:auto}
+
+@media print{
+  body{background:#fff;color:#1a1a1a;padding:0}
+  .navbar,.fab,.top,.cta,.hero>img,.hero .veil,.oa,.search{display:none!important}
+  .hero{min-height:auto;background:#fff}
+  .brand,.sec-title,.sh h2,.order h2{color:#7A1B1B}
+  .chip b,.opr b,.tag,.zones b{color:#7A1B1B}
+  .offer,.sec,.zones,.order{border-color:#ddd;background:#fff;break-inside:avoid}
+  .ds,.note,.dim,footer,.oin p{color:#555}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#menu">تخطّي إلى المنيو</a>
+
+<header class="hero">
+  <img src="assets/hero.jpg" alt="تشكيلة من أكلات مطعم شام" width="1400" height="1738" fetchpriority="high">
+  <div class="veil"></div>
+  <div class="hero-in">
+    <h1 class="brand">شــام</h1>
+    <p class="tagline">"الخلطة سورية … بلمسة مصرية"</p>
+    <p class="meta">زيزينيا — ١٣ ش رياض، أمام مدرسة الرمل الثانوية بنين<br>مفتوح يوميًا · توصيل سريع</p>
+    <div class="cta">
+      <a class="btn" href="https://wa.me/201501833633?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D8%B7%D9%84%D8%A8%20%D9%85%D9%86%20%D8%A7%D9%84%D9%85%D9%86%D9%8A%D9%88" target="_blank" rel="noopener">اطلب على واتساب</a>
+      <a class="btn ghost" href="tel:0355760070">اتصل ٥٧٦٠٠٧٠</a>
+    </div>
+  </div>
+</header>
+
+<nav class="navbar" aria-label="أقسام المنيو">
+  <div class="navwrap">
+    <div class="search">
+      <input id="q" type="search" placeholder="دوّر على صنف… مثلاً: شاورما" aria-label="ابحث في المنيو" autocomplete="off">
+      <span class="ico" aria-hidden="true">⌕</span>
+      <button class="clr" id="clr" type="button" aria-label="مسح البحث" hidden>×</button>
+    </div>
+    <div class="chipsnav" id="navchips"><a href="#offers">العروض</a><a href="#fries">البطاطس</a><a href="#weight">شاورما بالوزن</a><a href="#shawarma">الشاورما</a><a href="#westsand">الغربي</a><a href="#meals">الوجبات</a><a href="#fatta">الفتات</a><a href="#maria">الماريا</a><a href="#pasta">المكرونات</a><a href="#crepe">الكريب</a><a href="#sweet">كريب حلو</a><a href="#burger">البرجر</a><a href="#sides">المقبلات</a><a href="#extras">الإضافات</a></div>
+  </div>
+</nav>
+
+<main id="menu">
+
+  <p class="zones"><b>بنوصل لحد عندك</b>سموحة · سيدي جابر · زيزينيا · جليم · سان ستيفانو · سيدي بشر · ميامي (ش ٤٥) · أسكوت · العوايد</p>
+
+  <section class="sec" id="offers" data-sec>
+    <h2 class="sec-title">عروض شام</h2>
+    <div class="sec-rule"></div>
+    <div class="offers">
+      <article class="offer feat">
+        <div class="oim">
+          <img src="assets/offer-duo.jpg" alt="عرض الدويتو" loading="lazy" width="760" height="570">
+          <span class="ob">الأكثر طلبًا</span>
+        </div>
+        <div class="oin">
+          <h3>عرض الدويتو</h3>
+          <p>ساندوتش شاورما فراخ لارج + ساندوتش كريسبي لارج + بيج كولا</p>
+          <div class="opr">
+            <b>١٣٠</b><span>جنيه</span>
+            <a class="oa" href="https://wa.me/201501833633?text=%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D8%B7%D9%84%D8%A8%20%D8%B9%D8%B1%D8%B6%20%D8%A7%D9%84%D8%AF%D9%88%D9%8A%D8%AA%D9%88" target="_blank" rel="noopener">اطلب<span class="sr">عرض الدويتو</span></a>
+          </div>
+        </div>
+      </article>
+      <article class="offer feat">
+        <div class="oim">
+          <img src="assets/offer-box.jpg" alt="بوكس شاورما" loading="lazy" width="760" height="570">
+          <span class="ob">جديد</span>
+        </div>
+        <div class="oin">
+          <h3>بوكس شاورما</h3>
+          <p>٤ كيزر شاورما فراخ + بطاطس + ٢ بيج كولا</p>
+          <div class="opr">
+            <b>٢٠٠</b><span>جنيه</span>
+            <a class="oa" href="https://wa.me/201501833633?text=%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D8%B7%D9%84%D8%A8%20%D8%A8%D9%88%D9%83%D8%B3%20%D8%B4%D8%A7%D9%88%D8%B1%D9%85%D8%A7" target="_blank" rel="noopener">اطلب<span class="sr">بوكس شاورما</span></a>
+          </div>
+        </div>
+      </article>
+      <article class="offer">
+        <div class="oim">
+          <img src="assets/offer-kofta.jpg" alt="عرض الكفتة" loading="lazy" width="760" height="570">
+          
+        </div>
+        <div class="oin">
+          <h3>عرض الكفتة</h3>
+          <p>٤ قطع كفتة + رز + بطاطس + طحينة + بيج كولا</p>
+          <div class="opr">
+            <b>١٥٠</b><span>جنيه</span>
+            <a class="oa" href="https://wa.me/201501833633?text=%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D8%B7%D9%84%D8%A8%20%D8%B9%D8%B1%D8%B6%20%D8%A7%D9%84%D9%83%D9%81%D8%AA%D8%A9" target="_blank" rel="noopener">اطلب<span class="sr">عرض الكفتة</span></a>
+          </div>
+        </div>
+      </article>
+      <article class="offer">
+        <div class="oim">
+          <img src="assets/offer-twins.jpg" alt="عرض التوينز" loading="lazy" width="760" height="570">
+          
+        </div>
+        <div class="oin">
+          <h3>عرض التوينز</h3>
+          <p>ساندوتش شاورما فراخ لارج + فتة شاورما فراخ لارج</p>
+          <div class="opr">
+            <b>١٦٠</b><span>جنيه</span>
+            <a class="oa" href="https://wa.me/201501833633?text=%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D8%B7%D9%84%D8%A8%20%D8%B9%D8%B1%D8%B6%20%D8%A7%D9%84%D8%AA%D9%88%D9%8A%D9%86%D8%B2" target="_blank" rel="noopener">اطلب<span class="sr">عرض التوينز</span></a>
+          </div>
+        </div>
+      </article>
+      <article class="offer">
+        <div class="oim">
+          <img src="assets/offer-burger.jpg" alt="عرض البرجر" loading="lazy" width="760" height="570">
+          
+        </div>
+        <div class="oin">
+          <h3>عرض البرجر</h3>
+          <p>برجر لحمة + برجر فراخ + تشيزي فرايز + بيج كولا</p>
+          <div class="opr">
+            <b>١٥٠</b><span>جنيه</span>
+            <a class="oa" href="https://wa.me/201501833633?text=%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D8%B7%D9%84%D8%A8%20%D8%B9%D8%B1%D8%B6%20%D8%A7%D9%84%D8%A8%D8%B1%D8%AC%D8%B1" target="_blank" rel="noopener">اطلب<span class="sr">عرض البرجر</span></a>
+          </div>
+        </div>
+      </article>
+      <article class="offer">
+        <div class="oim">
+          <img src="assets/offer-crepe.jpg" alt="عرض الكريب" loading="lazy" width="760" height="570">
+          <span class="ob">هدية</span>
+        </div>
+        <div class="oin">
+          <h3>عرض الكريب</h3>
+          <p>أي كريب مثلث + كريب فوتوتشيني مجانًا</p>
+          <div class="opr">
+            <b>هدية</b>
+            <a class="oa" href="https://wa.me/201501833633?text=%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D8%B7%D9%84%D8%A8%20%D8%B9%D8%B1%D8%B6%20%D8%A7%D9%84%D9%83%D8%B1%D9%8A%D8%A8" target="_blank" rel="noopener">اطلب<span class="sr">عرض الكريب</span></a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+
+  <section class="sec" id="fries" data-sec>
+    <header class="sh">
+      <img class="thumb" src="assets/sec-fries.jpg" alt="" loading="lazy" width="64" height="64">
+      <div class="sh-t">
+        <h2>ركن البطاطس <span class="tag">جديد</span></h2>
+        <p class="note">كل أنواع البطاطس في مكان واحد</p>
+      </div>
+    </header>
+    <ul class="rows">
+<li class="row" data-name="باكيت بطاطس سادة">
+      <div class="rt"><span class="nm">باكيت بطاطس سادة</span><span class="ds">بطاطس مقرمشة + صوص من اختيارك</span></div>
+      <div class="chips"><div class="chip one"><b>٣٠</b></div></div>
+    </li>
+<li class="row" data-name="تشيزي فرايز">
+      <div class="rt"><span class="nm">تشيزي فرايز</span><span class="ds">صوص شيدر</span></div>
+      <div class="chips"><div class="chip one"><b>٤٥</b></div></div>
+    </li>
+<li class="row" data-name="شام فرايز">
+      <div class="rt"><span class="nm">شام فرايز</span><span class="ds">شيدر · رانش · كاتشب</span></div>
+      <div class="chips"><div class="chip one"><b>٥٠</b></div></div>
+    </li>
+<li class="row" data-name="شام فرايز كريسبي">
+      <div class="rt"><span class="nm">شام فرايز كريسبي</span><span class="ds">شيدر · رانش · كاتشب</span></div>
+      <div class="chips"><div class="chip one"><b>٧٥</b></div></div>
+    </li>
+<li class="row" data-name="شام فرايز زينجر">
+      <div class="rt"><span class="nm">شام فرايز زينجر</span><span class="ds">شيدر · سويت شيلي · هالبينو</span></div>
+      <div class="chips"><div class="chip one"><b>٧٥</b></div></div>
+    </li>
+<li class="row" data-name="شام فرايز شاورما فراخ">
+      <div class="rt"><span class="nm">شام فرايز شاورما فراخ</span><span class="ds">شيدر · رانش · كاتشب · تومية</span></div>
+      <div class="chips"><div class="chip one"><b>٧٥</b></div></div>
+    </li>
+<li class="row" data-name="شام فرايز شاورما لحمة">
+      <div class="rt"><span class="nm">شام فرايز شاورما لحمة</span><span class="ds">شيدر · رانش · كاتشب</span></div>
+      <div class="chips"><div class="chip one"><b>٧٥</b></div></div>
+    </li>
+<li class="row" data-name="شام فرايز سدق">
+      <div class="rt"><span class="nm">شام فرايز سدق</span><span class="ds">شيدر · رانش · كاتشب</span></div>
+      <div class="chips"><div class="chip one"><b>٧٥</b></div></div>
+    </li>
+<li class="row" data-name="شام فرايز بسطرمة">
+      <div class="rt"><span class="nm">شام فرايز بسطرمة</span><span class="ds">شيدر · رانش · كاتشب</span></div>
+      <div class="chips"><div class="chip one"><b>٧٥</b></div></div>
+    </li>
+    </ul>
+  </section>
+
+  <section class="sec" id="weight" data-sec>
+    <header class="sh">
+      <img class="thumb" src="assets/sec-weight.jpg" alt="" loading="lazy" width="64" height="64">
+      <div class="sh-t">
+        <h2>شاورما بالوزن <span class="tag">جديد</span></h2>
+        <p class="note">تُقدّم مع السلطة والمخلل والعيش</p>
+      </div>
+    </header>
+    <ul class="rows">
+<li class="row" data-name="شاورما فراخ">
+      <div class="rt"><span class="nm">شاورما فراخ</span><span class="ds">تومية + مخلل + عيش</span></div>
+      <div class="chips"><div class="chip"><i>ربع</i><b>١٧٥</b></div><div class="chip"><i>نص</i><b>٣٥٠</b></div><div class="chip"><i>كيلو</i><b>٦٥٠</b></div></div>
+    </li>
+<li class="row" data-name="شاورما لحمة">
+      <div class="rt"><span class="nm">شاورما لحمة</span><span class="ds">طحينة + مخلل + عيش</span></div>
+      <div class="chips"><div class="chip"><i>ربع</i><b>٢٠٠</b></div><div class="chip"><i>نص</i><b>٣٧٥</b></div><div class="chip"><i>كيلو</i><b>٧٠٠</b></div></div>
+    </li>
+    </ul>
+  </section>
+
+  <section class="sec" id="shawarma" data-sec>
+    <header class="sh">
+      <img class="thumb" src="assets/sec-shawarma.jpg" alt="" loading="lazy" width="64" height="64">
+      <div class="sh-t">
+        <h2>سندويتشات الشاورما</h2>
+        
+      </div>
+    </header>
+    <ul class="rows">
+<li class="row" data-name="شاورما فراخ">
+      <div class="rt"><span class="nm">شاورما فراخ</span></div>
+      <div class="chips"><div class="chip"><i>لارج</i><b>٨٥</b></div><div class="chip"><i>إكس لارج</i><b>١٠٠</b></div></div>
+    </li>
+<li class="row" data-name="شاورما لحمة">
+      <div class="rt"><span class="nm">شاورما لحمة</span></div>
+      <div class="chips"><div class="chip"><i>لارج</i><b>٩٠</b></div><div class="chip"><i>إكس لارج</i><b>١٠٥</b></div></div>
+    </li>
+<li class="row" data-name="شاورما ميكس">
+      <div class="rt"><span class="nm">شاورما ميكس</span></div>
+      <div class="chips"><div class="chip"><i>لارج</i><b>٨٥</b></div><div class="chip"><i>إكس لارج</i><b>١٠٥</b></div></div>
+    </li>
+<li class="row" data-name="كايزر شاورما فراخ مصري">
+      <div class="rt"><span class="nm">كايزر شاورما فراخ مصري</span></div>
+      <div class="chips"><div class="chip"><i>لارج</i><b>٤٥</b></div><div class="chip off"><i>إكس لارج</i><b>—</b></div></div>
+    </li>
+<li class="row" data-name="كايزر شاورما لحمة مصري">
+      <div class="rt"><span class="nm">كايزر شاورما لحمة مصري</span></div>
+      <div class="chips"><div class="chip"><i>لارج</i><b>٥٥</b></div><div class="chip off"><i>إكس لارج</i><b>—</b></div></div>
+    </li>
+<li class="row" data-name="وجبة شاورما عربي فراخ">
+      <div class="rt"><span class="nm">وجبة شاورما عربي فراخ</span></div>
+      <div class="chips"><div class="chip"><i>لارج</i><b>١٢٠</b></div><div class="chip off"><i>إكس لارج</i><b>—</b></div></div>
+    </li>
+<li class="row" data-name="وجبة شاورما عربي لحمة">
+      <div class="rt"><span class="nm">وجبة شاورما عربي لحمة</span></div>
+      <div class="chips"><div class="chip"><i>لارج</i><b>١٣٠</b></div><div class="chip off"><i>إكس لارج</i><b>—</b></div></div>
+    </li>
+    </ul>
+  </section>
+
+  <section class="sec" id="westsand" data-sec>
+    <header class="sh">
+      <span class="thumb ph" aria-hidden="true"></span>
+      <div class="sh-t">
+        <h2>سندويتشات الغربي</h2>
+        <p class="note">خبز من اختيارك: سوري أو فرنساوي</p>
+      </div>
+    </header>
+    <ul class="rows">
+<li class="row" data-name="بطاطس">
+      <div class="rt"><span class="nm">بطاطس</span></div>
+      <div class="chips"><div class="chip"><i>لارج</i><b>٢٥</b></div><div class="chip"><i>إكس لارج</i><b>٣٥</b></div></div>
+    </li>
+<li class="row" data-name="بطاطس موتزاريلا">
+      <div class="rt"><span class="nm">بطاطس موتزاريلا</span></div>
+      <div class="chips"><div class="chip"><i>لارج</i><b>٣٥</b></div><div class="chip"><i>إكس لارج</i><b>٤٥</b></div></div>
+    </li>
+<li class="row" data-name="جبنة مقلية (شيدر)">
+      <div class="rt"><span class="nm">جبنة مقلية (شيدر)</span></div>
+      <div class="chips"><div class="chip"><i>لارج</i><b>٢٥</b></div><div class="chip"><i>إكس لارج</i><b>٤٥</b></div></div>
+    </li>
+<li class="row" data-name="جبنة مقلية (تركي)">
+      <div class="rt"><span class="nm">جبنة مقلية (تركي)</span></div>
+      <div class="chips"><div class="chip"><i>لارج</i><b>٣٥</b></div><div class="chip"><i>إكس لارج</i><b>٥٥</b></div></div>
+    </li>
+<li class="row" data-name="كبدة أسكندراني">
+      <div class="rt"><span class="nm">كبدة أسكندراني</span></div>
+      <div class="chips"><div class="chip"><i>لارج</i><b>٣٠</b></div><div class="chip"><i>إكس لارج</i><b>٥٠</b></div></div>
+    </li>
+<li class="row" data-name="كبدة فراخ">
+      <div class="rt"><span class="nm">كبدة فراخ</span></div>
+      <div class="chips"><div class="chip"><i>لارج</i><b>٣٠</b></div><div class="chip"><i>إكس لارج</i><b>٥٠</b></div></div>
+    </li>
+<li class="row" data-name="سوسيس">
+      <div class="rt"><span class="nm">سوسيس</span></div>
+      <div class="chips"><div class="chip"><i>لارج</i><b>٤٠</b></div><div class="chip"><i>إكس لارج</i><b>٦٠</b></div></div>
+    </li>
+<li class="row" data-name="سدق">
+      <div class="rt"><span class="nm">سدق</span></div>
+      <div class="chips"><div class="chip"><i>لارج</i><b>٥٠</b></div><div class="chip"><i>إكس لارج</i><b>٧٠</b></div></div>
+    </li>
+<li class="row" data-name="فاهيتا">
+      <div class="rt"><span class="nm">فاهيتا</span></div>
+      <div class="chips"><div class="chip"><i>لارج</i><b>٥٥</b></div><div class="chip"><i>إكس لارج</i><b>٧٥</b></div></div>
+    </li>
+<li class="row" data-name="بانيه">
+      <div class="rt"><span class="nm">بانيه</span></div>
+      <div class="chips"><div class="chip"><i>لارج</i><b>٥٥</b></div><div class="chip"><i>إكس لارج</i><b>٧٥</b></div></div>
+    </li>
+<li class="row" data-name="كفتة لحم">
+      <div class="rt"><span class="nm">كفتة لحم</span></div>
+      <div class="chips"><div class="chip"><i>لارج</i><b>٥٥</b></div><div class="chip"><i>إكس لارج</i><b>٧٥</b></div></div>
+    </li>
+<li class="row" data-name="كريسبي">
+      <div class="rt"><span class="nm">كريسبي</span></div>
+      <div class="chips"><div class="chip"><i>لارج</i><b>٥٥</b></div><div class="chip"><i>إكس لارج</i><b>٧٥</b></div></div>
+    </li>
+<li class="row" data-name="زنجر">
+      <div class="rt"><span class="nm">زنجر</span></div>
+      <div class="chips"><div class="chip"><i>لارج</i><b>٥٥</b></div><div class="chip"><i>إكس لارج</i><b>٧٥</b></div></div>
+    </li>
+<li class="row" data-name="شيش طاووق">
+      <div class="rt"><span class="nm">شيش طاووق</span></div>
+      <div class="chips"><div class="chip"><i>لارج</i><b>٥٥</b></div><div class="chip"><i>إكس لارج</i><b>٧٥</b></div></div>
+    </li>
+    </ul>
+  </section>
+
+  <section class="sec" id="meals" data-sec>
+    <header class="sh">
+      <img class="thumb" src="assets/sec-meals.jpg" alt="" loading="lazy" width="64" height="64">
+      <div class="sh-t">
+        <h2>وجبات الغربي</h2>
+        <p class="note">تُقدّم مع: أرز بسمتي · بطاطس · تومية · مخلل · خبز</p>
+      </div>
+    </header>
+    <ul class="rows">
+<li class="row" data-name="١/٤ فرخة (ورك)">
+      <div class="rt"><span class="nm">١/٤ فرخة (ورك)</span></div>
+      <div class="chips"><div class="chip one"><b>١١٠</b></div></div>
+    </li>
+<li class="row" data-name="١/٤ فرخة (صدر)">
+      <div class="rt"><span class="nm">١/٤ فرخة (صدر)</span></div>
+      <div class="chips"><div class="chip one"><b>١٢٠</b></div></div>
+    </li>
+<li class="row" data-name="١/٢ فرخة">
+      <div class="rt"><span class="nm">١/٢ فرخة</span></div>
+      <div class="chips"><div class="chip one"><b>١٩٠</b></div></div>
+    </li>
+<li class="row" data-name="فرخة كاملة">
+      <div class="rt"><span class="nm">فرخة كاملة</span></div>
+      <div class="chips"><div class="chip one"><b>٣٥٠</b></div></div>
+    </li>
+<li class="row" data-name="وجبة كريسبي (٦ قطع)">
+      <div class="rt"><span class="nm">وجبة كريسبي (٦ قطع)</span></div>
+      <div class="chips"><div class="chip one"><b>١٧٠</b></div></div>
+    </li>
+<li class="row" data-name="وجبة الزنجر (٦ قطع)">
+      <div class="rt"><span class="nm">وجبة الزنجر (٦ قطع)</span></div>
+      <div class="chips"><div class="chip one"><b>١٧٠</b></div></div>
+    </li>
+<li class="row" data-name="وجبة فاهيتا">
+      <div class="rt"><span class="nm">وجبة فاهيتا</span></div>
+      <div class="chips"><div class="chip one"><b>١٧٠</b></div></div>
+    </li>
+<li class="row" data-name="وجبة البانيه (٣ قطع)">
+      <div class="rt"><span class="nm">وجبة البانيه (٣ قطع)</span></div>
+      <div class="chips"><div class="chip one"><b>١٧٠</b></div></div>
+    </li>
+<li class="row" data-name="وجبة الشيش">
+      <div class="rt"><span class="nm">وجبة الشيش</span></div>
+      <div class="chips"><div class="chip one"><b>١٧٠</b></div></div>
+    </li>
+<li class="row" data-name="وجبة كفتة لحم (٦ قطع)">
+      <div class="rt"><span class="nm">وجبة كفتة لحم (٦ قطع)</span></div>
+      <div class="chips"><div class="chip one"><b>١٨٠</b></div></div>
+    </li>
+<li class="row" data-name="وجبة ميكس الشام">
+      <div class="rt"><span class="nm">وجبة ميكس الشام</span></div>
+      <div class="chips"><div class="chip one"><b>١٨٠</b></div></div>
+    </li>
+    </ul>
+  </section>
+
+  <section class="sec" id="fatta" data-sec>
+    <header class="sh">
+      <img class="thumb" src="assets/sec-fatta.jpg" alt="" loading="lazy" width="64" height="64">
+      <div class="sh-t">
+        <h2>الفتات</h2>
+        
+      </div>
+    </header>
+    <ul class="rows">
+<li class="row" data-name="فتة شاورما فراخ">
+      <div class="rt"><span class="nm">فتة شاورما فراخ</span></div>
+      <div class="chips"><div class="chip"><i>ميديم</i><b>٧٠</b></div><div class="chip"><i>لارج</i><b>٩٥</b></div><div class="chip"><i>إكس لارج</i><b>١٢٠</b></div></div>
+    </li>
+<li class="row" data-name="فتة شاورما لحمة">
+      <div class="rt"><span class="nm">فتة شاورما لحمة</span></div>
+      <div class="chips"><div class="chip"><i>ميديم</i><b>٧٥</b></div><div class="chip"><i>لارج</i><b>١٠٥</b></div><div class="chip"><i>إكس لارج</i><b>١٢٥</b></div></div>
+    </li>
+<li class="row" data-name="فتة شاورما ميكس">
+      <div class="rt"><span class="nm">فتة شاورما ميكس</span></div>
+      <div class="chips"><div class="chip"><i>ميديم</i><b>٧٥</b></div><div class="chip"><i>لارج</i><b>١٠٠</b></div><div class="chip"><i>إكس لارج</i><b>١٢٠</b></div></div>
+    </li>
+<li class="row" data-name="فتة كريسبي">
+      <div class="rt"><span class="nm">فتة كريسبي</span></div>
+      <div class="chips"><div class="chip"><i>ميديم</i><b>٧٠</b></div><div class="chip"><i>لارج</i><b>٩٥</b></div><div class="chip"><i>إكس لارج</i><b>١٢٠</b></div></div>
+    </li>
+<li class="row" data-name="فتة زنجر">
+      <div class="rt"><span class="nm">فتة زنجر</span></div>
+      <div class="chips"><div class="chip"><i>ميديم</i><b>٧٠</b></div><div class="chip"><i>لارج</i><b>٩٥</b></div><div class="chip"><i>إكس لارج</i><b>١٢٠</b></div></div>
+    </li>
+<li class="row" data-name="فتة فاهيتا">
+      <div class="rt"><span class="nm">فتة فاهيتا</span></div>
+      <div class="chips"><div class="chip"><i>ميديم</i><b>٧٠</b></div><div class="chip"><i>لارج</i><b>٩٥</b></div><div class="chip"><i>إكس لارج</i><b>١٢٠</b></div></div>
+    </li>
+<li class="row" data-name="فتة فور تشيكن">
+      <div class="rt"><span class="nm">فتة فور تشيكن</span></div>
+      <div class="chips"><div class="chip"><i>ميديم</i><b>١٤٠</b></div><div class="chip off"><i>لارج</i><b>—</b></div><div class="chip off"><i>إكس لارج</i><b>—</b></div></div>
+    </li>
+    </ul>
+  </section>
+
+  <section class="sec" id="maria" data-sec>
+    <header class="sh">
+      <span class="thumb ph" aria-hidden="true"></span>
+      <div class="sh-t">
+        <h2>الماريا</h2>
+        
+      </div>
+    </header>
+    <ul class="rows">
+<li class="row" data-name="ماريا فاهيتا">
+      <div class="rt"><span class="nm">ماريا فاهيتا</span></div>
+      <div class="chips"><div class="chip"><i>عادي</i><b>٩٠</b></div><div class="chip"><i>بالجبنة</i><b>١١٠</b></div></div>
+    </li>
+<li class="row" data-name="ماريا كريسبي">
+      <div class="rt"><span class="nm">ماريا كريسبي</span></div>
+      <div class="chips"><div class="chip"><i>عادي</i><b>٩٠</b></div><div class="chip"><i>بالجبنة</i><b>١١٠</b></div></div>
+    </li>
+<li class="row" data-name="ماريا زنجر">
+      <div class="rt"><span class="nm">ماريا زنجر</span></div>
+      <div class="chips"><div class="chip"><i>عادي</i><b>٩٠</b></div><div class="chip"><i>بالجبنة</i><b>١١٠</b></div></div>
+    </li>
+<li class="row" data-name="ماريا سدق">
+      <div class="rt"><span class="nm">ماريا سدق</span></div>
+      <div class="chips"><div class="chip"><i>عادي</i><b>٩٠</b></div><div class="chip"><i>بالجبنة</i><b>١١٠</b></div></div>
+    </li>
+<li class="row" data-name="ماريا سوسيس">
+      <div class="rt"><span class="nm">ماريا سوسيس</span></div>
+      <div class="chips"><div class="chip"><i>عادي</i><b>٩٠</b></div><div class="chip"><i>بالجبنة</i><b>١١٠</b></div></div>
+    </li>
+<li class="row" data-name="ماريا بسطرمة">
+      <div class="rt"><span class="nm">ماريا بسطرمة</span></div>
+      <div class="chips"><div class="chip"><i>عادي</i><b>٩٠</b></div><div class="chip"><i>بالجبنة</i><b>١١٠</b></div></div>
+    </li>
+<li class="row" data-name="ماريا شاورما فراخ">
+      <div class="rt"><span class="nm">ماريا شاورما فراخ</span></div>
+      <div class="chips"><div class="chip"><i>عادي</i><b>٩٠</b></div><div class="chip"><i>بالجبنة</i><b>١١٠</b></div></div>
+    </li>
+<li class="row" data-name="ماريا شاورما لحم">
+      <div class="rt"><span class="nm">ماريا شاورما لحم</span></div>
+      <div class="chips"><div class="chip"><i>عادي</i><b>١٠٠</b></div><div class="chip"><i>بالجبنة</i><b>١٢٠</b></div></div>
+    </li>
+<li class="row" data-name="ماريا مشكل لحوم">
+      <div class="rt"><span class="nm">ماريا مشكل لحوم</span></div>
+      <div class="chips"><div class="chip"><i>عادي</i><b>١٠٠</b></div><div class="chip"><i>بالجبنة</i><b>١٢٠</b></div></div>
+    </li>
+    </ul>
+  </section>
+
+  <section class="sec" id="pasta" data-sec>
+    <header class="sh">
+      <span class="thumb ph" aria-hidden="true"></span>
+      <div class="sh-t">
+        <h2>المكرونات</h2>
+        <p class="note">طاجن (ريد صوص) · فرن (وايت صوص) · سباجيتي</p>
+      </div>
+    </header>
+    <ul class="rows">
+<li class="row" data-name="مكرونة سادة">
+      <div class="rt"><span class="nm">مكرونة سادة</span></div>
+      <div class="chips"><div class="chip"><i>لارج</i><b>٥٥</b></div><div class="chip"><i>إكس لارج</i><b>٧٠</b></div></div>
+    </li>
+<li class="row" data-name="مكرونة سدق">
+      <div class="rt"><span class="nm">مكرونة سدق</span></div>
+      <div class="chips"><div class="chip"><i>لارج</i><b>٨٥</b></div><div class="chip"><i>إكس لارج</i><b>١٠٥</b></div></div>
+    </li>
+<li class="row" data-name="مكرونة سوسيس">
+      <div class="rt"><span class="nm">مكرونة سوسيس</span></div>
+      <div class="chips"><div class="chip"><i>لارج</i><b>٨٥</b></div><div class="chip"><i>إكس لارج</i><b>١٠٥</b></div></div>
+    </li>
+<li class="row" data-name="مكرونة بسطرمة">
+      <div class="rt"><span class="nm">مكرونة بسطرمة</span></div>
+      <div class="chips"><div class="chip"><i>لارج</i><b>٨٥</b></div><div class="chip"><i>إكس لارج</i><b>١٠٥</b></div></div>
+    </li>
+<li class="row" data-name="مكرونة لحمة مفرومة">
+      <div class="rt"><span class="nm">مكرونة لحمة مفرومة</span></div>
+      <div class="chips"><div class="chip"><i>لارج</i><b>٨٥</b></div><div class="chip"><i>إكس لارج</i><b>١٠٥</b></div></div>
+    </li>
+<li class="row" data-name="مكرونة ميكس جبن">
+      <div class="rt"><span class="nm">مكرونة ميكس جبن</span></div>
+      <div class="chips"><div class="chip"><i>لارج</i><b>٨٠</b></div><div class="chip"><i>إكس لارج</i><b>١٠٥</b></div></div>
+    </li>
+<li class="row" data-name="مكرونة نجريسكو">
+      <div class="rt"><span class="nm">مكرونة نجريسكو</span></div>
+      <div class="chips"><div class="chip"><i>لارج</i><b>٩٠</b></div><div class="chip"><i>إكس لارج</i><b>١١٥</b></div></div>
+    </li>
+<li class="row" data-name="مكرونة كريسبي">
+      <div class="rt"><span class="nm">مكرونة كريسبي</span></div>
+      <div class="chips"><div class="chip"><i>لارج</i><b>٩٠</b></div><div class="chip"><i>إكس لارج</i><b>١١٥</b></div></div>
+    </li>
+<li class="row" data-name="مكرونة شاورما فراخ">
+      <div class="rt"><span class="nm">مكرونة شاورما فراخ</span></div>
+      <div class="chips"><div class="chip"><i>لارج</i><b>٩٠</b></div><div class="chip"><i>إكس لارج</i><b>١١٥</b></div></div>
+    </li>
+<li class="row" data-name="مكرونة شاورما لحمة">
+      <div class="rt"><span class="nm">مكرونة شاورما لحمة</span></div>
+      <div class="chips"><div class="chip"><i>لارج</i><b>١٠٠</b></div><div class="chip"><i>إكس لارج</i><b>١٢٥</b></div></div>
+    </li>
+<li class="row" data-name="مكرونة ميكس لحوم">
+      <div class="rt"><span class="nm">مكرونة ميكس لحوم</span></div>
+      <div class="chips"><div class="chip"><i>لارج</i><b>١٠٠</b></div><div class="chip"><i>إكس لارج</i><b>١٢٥</b></div></div>
+    </li>
+    </ul>
+  </section>
+
+  <section class="sec" id="crepe" data-sec>
+    <header class="sh">
+      <img class="thumb" src="assets/sec-crepe.jpg" alt="" loading="lazy" width="64" height="64">
+      <div class="sh-t">
+        <h2>الكريب</h2>
+        
+      </div>
+    </header>
+    <ul class="rows">
+<li class="row" data-name="كريب جبنة">
+      <div class="rt"><span class="nm">كريب جبنة</span></div>
+      <div class="chips"><div class="chip"><i>رول</i><b>٥٠</b></div><div class="chip"><i>مثلث</i><b>٧٠</b></div></div>
+    </li>
+<li class="row" data-name="كريب بطاطس">
+      <div class="rt"><span class="nm">كريب بطاطس</span></div>
+      <div class="chips"><div class="chip"><i>رول</i><b>٥٠</b></div><div class="chip"><i>مثلث</i><b>٧٠</b></div></div>
+    </li>
+<li class="row" data-name="كريب سوسيس">
+      <div class="rt"><span class="nm">كريب سوسيس</span></div>
+      <div class="chips"><div class="chip"><i>رول</i><b>٦٠</b></div><div class="chip"><i>مثلث</i><b>٨٠</b></div></div>
+    </li>
+<li class="row" data-name="كريب مشروم">
+      <div class="rt"><span class="nm">كريب مشروم</span></div>
+      <div class="chips"><div class="chip"><i>رول</i><b>٦٠</b></div><div class="chip"><i>مثلث</i><b>٨٠</b></div></div>
+    </li>
+<li class="row" data-name="كريب سدق">
+      <div class="rt"><span class="nm">كريب سدق</span></div>
+      <div class="chips"><div class="chip"><i>رول</i><b>٦٠</b></div><div class="chip"><i>مثلث</i><b>١٠٠</b></div></div>
+    </li>
+<li class="row" data-name="كريب لحمة مفرومة">
+      <div class="rt"><span class="nm">كريب لحمة مفرومة</span></div>
+      <div class="chips"><div class="chip"><i>رول</i><b>٦٠</b></div><div class="chip"><i>مثلث</i><b>١٠٠</b></div></div>
+    </li>
+<li class="row" data-name="كريب زنجر">
+      <div class="rt"><span class="nm">كريب زنجر</span></div>
+      <div class="chips"><div class="chip"><i>رول</i><b>٦٥</b></div><div class="chip"><i>مثلث</i><b>١٠٥</b></div></div>
+    </li>
+<li class="row" data-name="كريب كريسبي">
+      <div class="rt"><span class="nm">كريب كريسبي</span></div>
+      <div class="chips"><div class="chip"><i>رول</i><b>٦٥</b></div><div class="chip"><i>مثلث</i><b>١٠٥</b></div></div>
+    </li>
+<li class="row" data-name="كريب بانيه">
+      <div class="rt"><span class="nm">كريب بانيه</span></div>
+      <div class="chips"><div class="chip"><i>رول</i><b>٦٥</b></div><div class="chip"><i>مثلث</i><b>١٠٥</b></div></div>
+    </li>
+<li class="row" data-name="كريب فاهيتا">
+      <div class="rt"><span class="nm">كريب فاهيتا</span></div>
+      <div class="chips"><div class="chip"><i>رول</i><b>٦٥</b></div><div class="chip"><i>مثلث</i><b>١٠٥</b></div></div>
+    </li>
+<li class="row" data-name="كريب بسطرمة">
+      <div class="rt"><span class="nm">كريب بسطرمة</span></div>
+      <div class="chips"><div class="chip"><i>رول</i><b>٧٠</b></div><div class="chip"><i>مثلث</i><b>١٠٥</b></div></div>
+    </li>
+<li class="row" data-name="كريب شاورما فراخ">
+      <div class="rt"><span class="nm">كريب شاورما فراخ</span></div>
+      <div class="chips"><div class="chip"><i>رول</i><b>٧٠</b></div><div class="chip"><i>مثلث</i><b>١٠٥</b></div></div>
+    </li>
+<li class="row" data-name="كريب شاورما لحمة">
+      <div class="rt"><span class="nm">كريب شاورما لحمة</span></div>
+      <div class="chips"><div class="chip"><i>رول</i><b>٧٥</b></div><div class="chip"><i>مثلث</i><b>١١٠</b></div></div>
+    </li>
+<li class="row" data-name="كريب شيش طاووق">
+      <div class="rt"><span class="nm">كريب شيش طاووق</span></div>
+      <div class="chips"><div class="chip off"><i>رول</i><b>—</b></div><div class="chip"><i>مثلث</i><b>١٠٥</b></div></div>
+    </li>
+<li class="row" data-name="كريب ميكس فراخ">
+      <div class="rt"><span class="nm">كريب ميكس فراخ</span></div>
+      <div class="chips"><div class="chip off"><i>رول</i><b>—</b></div><div class="chip"><i>مثلث</i><b>١١٠</b></div></div>
+    </li>
+<li class="row" data-name="كريب ميكس لحمة">
+      <div class="rt"><span class="nm">كريب ميكس لحمة</span></div>
+      <div class="chips"><div class="chip off"><i>رول</i><b>—</b></div><div class="chip"><i>مثلث</i><b>١١٠</b></div></div>
+    </li>
+<li class="row" data-name="كريب ميكس جبن">
+      <div class="rt"><span class="nm">كريب ميكس جبن</span></div>
+      <div class="chips"><div class="chip off"><i>رول</i><b>—</b></div><div class="chip"><i>مثلث</i><b>١١٠</b></div></div>
+    </li>
+    </ul>
+  </section>
+
+  <section class="sec" id="sweet" data-sec>
+    <header class="sh">
+      <span class="thumb ph" aria-hidden="true"></span>
+      <div class="sh-t">
+        <h2>كريب حلو</h2>
+        
+      </div>
+    </header>
+    <ul class="rows">
+<li class="row" data-name="كريب فوتوتشيني">
+      <div class="rt"><span class="nm">كريب فوتوتشيني</span></div>
+      <div class="chips"><div class="chip one"><b>٢٥</b></div></div>
+    </li>
+<li class="row" data-name="كريب هوموز">
+      <div class="rt"><span class="nm">كريب هوموز</span></div>
+      <div class="chips"><div class="chip one"><b>٥٥</b></div></div>
+    </li>
+<li class="row" data-name="كريب شوكولاتة">
+      <div class="rt"><span class="nm">كريب شوكولاتة</span></div>
+      <div class="chips"><div class="chip one"><b>٦٥</b></div></div>
+    </li>
+    </ul>
+  </section>
+
+  <section class="sec" id="burger" data-sec>
+    <header class="sh">
+      <img class="thumb" src="assets/sec-burger.jpg" alt="" loading="lazy" width="64" height="64">
+      <div class="sh-t">
+        <h2>البرجر</h2>
+        <p class="note">دوبل: لحمة +٤٠ · فراخ +٤٥</p>
+      </div>
+    </header>
+    <ul class="rows">
+<li class="row" data-name="برجر لحمة">
+      <div class="rt"><span class="nm">برجر لحمة</span></div>
+      <div class="chips"><div class="chip"><i>عادي</i><b>٧٠</b></div><div class="chip"><i>بالجبنة</i><b>٧٥</b></div></div>
+    </li>
+<li class="row" data-name="برجر فراخ">
+      <div class="rt"><span class="nm">برجر فراخ</span></div>
+      <div class="chips"><div class="chip"><i>عادي</i><b>٦٥</b></div><div class="chip"><i>بالجبنة</i><b>٧٠</b></div></div>
+    </li>
+    </ul>
+  </section>
+
+  <section class="sec" id="sides" data-sec>
+    <header class="sh">
+      <span class="thumb ph" aria-hidden="true"></span>
+      <div class="sh-t">
+        <h2>مقبلات وسلطات</h2>
+        
+      </div>
+    </header>
+    <ul class="rows">
+<li class="row" data-name="تومية صغيرة">
+      <div class="rt"><span class="nm">تومية صغيرة</span></div>
+      <div class="chips"><div class="chip one"><b>٥</b></div></div>
+    </li>
+<li class="row" data-name="تومية كبيرة">
+      <div class="rt"><span class="nm">تومية كبيرة</span></div>
+      <div class="chips"><div class="chip one"><b>٢٠</b></div></div>
+    </li>
+<li class="row" data-name="كولسلو">
+      <div class="rt"><span class="nm">كولسلو</span></div>
+      <div class="chips"><div class="chip one"><b>٣٠</b></div></div>
+    </li>
+<li class="row" data-name="سلطة خضراء">
+      <div class="rt"><span class="nm">سلطة خضراء</span></div>
+      <div class="chips"><div class="chip one"><b>٣٠</b></div></div>
+    </li>
+<li class="row" data-name="طبق أرز">
+      <div class="rt"><span class="nm">طبق أرز</span></div>
+      <div class="chips"><div class="chip one"><b>٣٠</b></div></div>
+    </li>
+<li class="row" data-name="بابا غنوج">
+      <div class="rt"><span class="nm">بابا غنوج</span></div>
+      <div class="chips"><div class="chip one"><b>٣٥</b></div></div>
+    </li>
+<li class="row" data-name="طحينة">
+      <div class="rt"><span class="nm">طحينة</span></div>
+      <div class="chips"><div class="chip one"><b>٣٥</b></div></div>
+    </li>
+    </ul>
+  </section>
+
+  <section class="sec" id="extras" data-sec>
+    <header class="sh">
+      <span class="thumb ph" aria-hidden="true"></span>
+      <div class="sh-t">
+        <h2>الإضافات والصوصات</h2>
+        
+      </div>
+    </header>
+    <ul class="rows">
+<li class="row" data-name="إضافة جبنة">
+      <div class="rt"><span class="nm">إضافة جبنة</span></div>
+      <div class="chips"><div class="chip one"><b>٢٥</b></div></div>
+    </li>
+<li class="row" data-name="إضافة فراخ">
+      <div class="rt"><span class="nm">إضافة فراخ</span></div>
+      <div class="chips"><div class="chip one"><b>٣٥</b></div></div>
+    </li>
+<li class="row" data-name="إضافة لحوم">
+      <div class="rt"><span class="nm">إضافة لحوم</span></div>
+      <div class="chips"><div class="chip one"><b>٣٥</b></div></div>
+    </li>
+<li class="row" data-name="رانش">
+      <div class="rt"><span class="nm">رانش</span></div>
+      <div class="chips"><div class="chip one"><b>١٠</b></div></div>
+    </li>
+<li class="row" data-name="باربيكيو">
+      <div class="rt"><span class="nm">باربيكيو</span></div>
+      <div class="chips"><div class="chip one"><b>١٠</b></div></div>
+    </li>
+<li class="row" data-name="سويت شيلي">
+      <div class="rt"><span class="nm">سويت شيلي</span></div>
+      <div class="chips"><div class="chip one"><b>١٠</b></div></div>
+    </li>
+<li class="row" data-name="تيكساس">
+      <div class="rt"><span class="nm">تيكساس</span></div>
+      <div class="chips"><div class="chip one"><b>١٠</b></div></div>
+    </li>
+<li class="row" data-name="هالبينو">
+      <div class="rt"><span class="nm">هالبينو</span></div>
+      <div class="chips"><div class="chip one"><b>١٠</b></div></div>
+    </li>
+    </ul>
+  </section>
+
+  <p id="nores" class="empty" hidden style="font-size:15px">مفيش صنف بالاسم ده — جرّب كلمة تانية</p>
+
+  <section class="order">
+    <h2>جاهز تطلب؟</h2>
+    <p>اطلب على واتساب وهنرد عليك في دقايق. قولنا اسم العرض أو الصنف والعنوان — وإحنا نكمّل.</p>
+    <div class="cta">
+      <a class="btn" href="https://wa.me/201501833633?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D8%B7%D9%84%D8%A8%20%D9%85%D9%86%20%D8%A7%D9%84%D9%85%D9%86%D9%8A%D9%88" target="_blank" rel="noopener">اطلب على واتساب</a>
+      <a class="btn ghost" href="tel:0355760070">٥٧٦٠٠٧٠</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span>شام — للمأكولات الشامية والسورية · زيزينيا، الإسكندرية</span>
+  <span>إنستجرام shamalexandria1 · تيك توك shamalexandria</span>
+</footer>
+
+<a class="fab" href="https://wa.me/201501833633?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D8%B7%D9%84%D8%A8%20%D9%85%D9%86%20%D8%A7%D9%84%D9%85%D9%86%D9%8A%D9%88" target="_blank" rel="noopener">اطلب واتساب</a>
+<button class="top" id="top" type="button" aria-label="ارجع لفوق">↑</button>
+
+<script>
+(function(){
+  "use strict";
+  var q=document.getElementById("q"), clr=document.getElementById("clr"),
+      nores=document.getElementById("nores"), topBtn=document.getElementById("top"),
+      secs=[].slice.call(document.querySelectorAll("[data-sec]")),
+      links=[].slice.call(document.querySelectorAll("#navchips a"));
+
+  /* ---- search ---- */
+  function norm(s){return (s||"").replace(/[أإآ]/g,"ا").replace(/ة/g,"ه").replace(/[ىي]/g,"ي")
+      .replace(/[ًٌٍَُِّْ]/g,"").trim().toLowerCase();}
+  function filter(){
+    var t=norm(q.value); clr.hidden=!q.value; var any=false;
+    secs.forEach(function(sec){
+      if(sec.id==="offers"){ sec.hidden = t.length>0; if(!t) any=true; return; }
+      var rows=[].slice.call(sec.querySelectorAll(".row")), shown=0;
+      rows.forEach(function(r){
+        var hit = !t || norm(r.dataset.name).indexOf(t)>-1;
+        r.hidden=!hit; if(hit) shown++;
+      });
+      sec.hidden = shown===0;
+      if(shown) any=true;
+    });
+    nores.hidden=any;
+  }
+  q.addEventListener("input",filter);
+  clr.addEventListener("click",function(){q.value="";filter();q.focus();});
+
+  /* ---- scroll spy ---- */
+  if("IntersectionObserver" in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(!e.isIntersecting) return;
+        links.forEach(function(a){
+          a.setAttribute("aria-current", a.getAttribute("href")==="#"+e.target.id ? "true":"false");
+        });
+      });
+    },{rootMargin:"-38% 0px -55% 0px",threshold:0});
+    secs.forEach(function(s){io.observe(s);});
+  }
+
+  /* ---- back to top ---- */
+  window.addEventListener("scroll",function(){
+    topBtn.classList.toggle("on", window.scrollY>700);
+  },{passive:true});
+  topBtn.addEventListener("click",function(){
+    window.scrollTo({top:0,behavior:"smooth"});
+  });
+})();
+</script>
+</body>
+</html>
